@@ -1,8 +1,8 @@
-package com.helloIftekhar.springJwt.controller;
+package com.petalscrm.controller;
 
-import com.helloIftekhar.springJwt.model.AuthenticationResponse;
-import com.helloIftekhar.springJwt.model.User;
-import com.helloIftekhar.springJwt.service.AuthenticationService;
+import com.petalscrm.model.AuthenticationResponse;
+import com.petalscrm.model.User;
+import com.petalscrm.service.AuthenticationService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.ResponseEntity;

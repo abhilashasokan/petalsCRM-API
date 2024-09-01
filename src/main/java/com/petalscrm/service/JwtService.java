@@ -1,7 +1,7 @@
-package com.helloIftekhar.springJwt.service;
+package com.petalscrm.service;
 
-import com.helloIftekhar.springJwt.model.User;
-import com.helloIftekhar.springJwt.repository.TokenRepository;
+import com.petalscrm.model.User;
+import com.petalscrm.repository.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

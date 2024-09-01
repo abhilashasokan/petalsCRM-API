@@ -1,4 +1,4 @@
-package com.helloIftekhar.springJwt;
+package com.petalscrm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

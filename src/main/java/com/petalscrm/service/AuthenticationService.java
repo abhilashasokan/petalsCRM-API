@@ -1,11 +1,11 @@
-package com.helloIftekhar.springJwt.service;
+package com.petalscrm.service;
 
 
-import com.helloIftekhar.springJwt.model.AuthenticationResponse;
-import com.helloIftekhar.springJwt.model.Token;
-import com.helloIftekhar.springJwt.model.User;
-import com.helloIftekhar.springJwt.repository.TokenRepository;
-import com.helloIftekhar.springJwt.repository.UserRepository;
+import com.petalscrm.model.AuthenticationResponse;
+import com.petalscrm.model.Token;
+import com.petalscrm.model.User;
+import com.petalscrm.repository.TokenRepository;
+import com.petalscrm.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;

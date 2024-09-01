@@ -1,6 +1,6 @@
-package com.helloIftekhar.springJwt.repository;
+package com.petalscrm.repository;
 
-import com.helloIftekhar.springJwt.model.Token;
+import com.petalscrm.model.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

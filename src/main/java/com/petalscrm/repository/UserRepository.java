@@ -1,6 +1,6 @@
-package com.helloIftekhar.springJwt.repository;
+package com.petalscrm.repository;
 
-import com.helloIftekhar.springJwt.model.User;
+import com.petalscrm.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

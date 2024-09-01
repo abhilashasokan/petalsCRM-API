@@ -1,6 +1,6 @@
-package com.helloIftekhar.springJwt.service;
+package com.petalscrm.service;
 
-import com.helloIftekhar.springJwt.repository.UserRepository;
+import com.petalscrm.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

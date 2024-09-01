@@ -1,7 +1,7 @@
-package com.helloIftekhar.springJwt.config;
+package com.petalscrm.config;
 
-import com.helloIftekhar.springJwt.model.Token;
-import com.helloIftekhar.springJwt.repository.TokenRepository;
+import com.petalscrm.model.Token;
+import com.petalscrm.repository.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Configuration;
