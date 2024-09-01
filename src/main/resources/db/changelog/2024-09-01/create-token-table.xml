@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="2" author="abhilash">
+        <createTable tableName="token">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="access_token" type="VARCHAR(255)" />
+            <column name="refresh_token" type="VARCHAR(255)" />
+            <column name="is_logged_out" type="BOOLEAN" />
+            <column name="user_id" type="INT">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="token"
+                                 constraintName="fk_token_user"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users" />
+    </changeSet>
+
+</databaseChangeLog>
