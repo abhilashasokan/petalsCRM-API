@@ -6,13 +6,15 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: none  # Disabling Hibernate's automatic DDL generation
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: POSTGRESQL
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
 
 application:
   security:
