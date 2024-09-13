@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/petalsCRM_db
+    url: jdbc:postgresql://localhost:5432/petalscrm
     username: abhilash
     password: admin123
     driver-class-name: org.postgresql.Driver
@@ -14,7 +14,9 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: POSTGRESQL
   liquibase:
+    enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
+
 
 application:
   security:

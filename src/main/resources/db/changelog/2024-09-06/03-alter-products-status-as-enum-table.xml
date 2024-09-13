@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Create enum type with capitalized values for status -->
+    <changeSet id="3" author="abhilash">
+        <sql>
+            CREATE TYPE product_status AS ENUM ('ACTIVE', 'INACTIVE', 'DRAFT');
+        </sql>
+    </changeSet>
+
+    <!-- Step 1: Convert the status column to TEXT to allow for updates -->
+    <changeSet id="4" author="abhilash">
+        <sql>
+            ALTER TABLE product
+            ALTER COLUMN status TYPE text;
+        </sql>
+    </changeSet>
+
+    <!-- Step 2: Update numeric status values to textual values -->
+    <changeSet id="5" author="abhilash">
+        <sql>
+            UPDATE product
+            SET status = CASE
+                             WHEN status = '1' THEN 'ACTIVE'
+                             WHEN status = '2' THEN 'INACTIVE'
+                             ELSE 'DRAFT'
+                END;
+        </sql>
+    </changeSet>
+
+    <!-- Step 3: Remove the default value for the status column -->
+    <changeSet id="6" author="abhilash">
+        <sql>
+            ALTER TABLE product
+                ALTER COLUMN status DROP DEFAULT;
+        </sql>
+    </changeSet>
+
+    <!-- Step 4: Convert the status column to product_status enum -->
+    <changeSet id="7" author="abhilash">
+        <sql>
+            ALTER TABLE product
+            ALTER COLUMN status TYPE product_status
+            USING status::product_status;
+        </sql>
+    </changeSet>
+
+    <!-- Step 5: Set the default value to 'DRAFT' for the product_status enum -->
+    <changeSet id="8" author="abhilash">
+        <sql>
+            ALTER TABLE product
+                ALTER COLUMN status SET DEFAULT 'DRAFT';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

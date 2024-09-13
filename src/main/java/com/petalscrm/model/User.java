@@ -10,11 +10,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
+
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", nullable = false, updatable = false)
     private Integer id;
 
     @Column(name = "first_name")

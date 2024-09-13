@@ -1,3 +1,11 @@
 databaseChangeLog:
   - include:
-      file: classpath:db/changelog/2024-09-01/create-user-table.xml
+      file: classpath:db/changelog/2024-09-01/01-create-user-table.xml
+  - include:
+      file: classpath:db/changelog/2024-09-01/02-create-token-table.xml
+  - include:
+      file: classpath:db/changelog/2024-09-06/01-create_category_table.xml
+  - include:
+      file: classpath:db/changelog/2024-09-06/02-create_products_table.xml
+  - include:
+      file: classpath:db/changelog/2024-09-06/03-alter-products-status-as-enum-table.xml
